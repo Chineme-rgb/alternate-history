@@ -67,6 +67,8 @@ function TimelineEventComponent(props) {
             <div className={classes.eventContainer} id="timeline_event">
                 <div className={classes.eventBar}>
                     <TextField size="small" label="Date" margin="dense" value={props.date} onChange={e => { props.updateEventDate(e.target.value) }} className={classes.dateInput}></TextField>
+                    <TextField size="small" label="Time" margin="dense" type="time" value={props.time} onChange={e => props.updateEventTime(e.target.value)} className={classes.dateInput}></TextField>
+
                     <div className={classes.eventButtonHolder}>
                         <Button variant="contained" size="small" color="primary" onClick={() => { props.clearEntry(); }} className={classes.eventButton}>Clear</Button>
                         <Button variant="contained" size="small" color="secondary" onClick={() => { props.deleteEntry(props.activeEntry); }} disabled={props.oneEntryLeft} className={classes.eventButton}>Delete</Button>
